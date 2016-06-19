@@ -19,14 +19,16 @@
             .perspective {
               width: 750px;
               height:500px;
-              -webkit-perspective: 150px;
-              perspective: 150px;
-              -webkit-perspective-origin: bottom;
-              perspective-origin: bottom;
+              -webkit-perspective: 750px;
+              perspective: 750px;
+              -webkit-perspective-origin: center;
+              perspective-origin: center;
               transform-style:preserve-3d;
             }
         </style>
         <link rel="stylesheet" href="css/map-rotate.css" />
+        <script   src="https://code.jquery.com/jquery-3.0.0.min.js"   integrity="sha256-JmvOoLtYsmqlsWxa7mDSLMwa6dZ9rrIdtrrVYRnDRH0="   crossorigin="anonymous"></script>
+        <script src="js/js-snippets.js"></script>
 
         <!--
             You need to include this script tag on any page that has a Google Map.
@@ -73,6 +75,7 @@
                     map: map,
                     title: 'Snazzy!'
                 });
+                makeMap3d();
             }
         </script>
     </head>
