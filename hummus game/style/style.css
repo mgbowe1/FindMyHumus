@@ -1,0 +1,94 @@
+body{
+    text-align: center;
+    margin:0;
+}
+div.inline{
+    display: inline-block;
+}
+div:not(.show){
+    display:none;
+}
+div.intro{
+    position: absolute;
+    width:100%;
+    top:0;
+    bottom:0;
+    text-align: center;
+    background-image: url("../images/background1.jpg");
+    background-size: cover;
+}
+div.image-holder{
+    padding-top: 200px;
+    margin-bottom: 40px;
+    display: block;
+}
+button.start-button{
+    border-radius: 20px;
+    color: white;
+    background-color: #333333;
+    width: 263px;
+    height: 63px;
+    font-size: 45px;
+    border: 1px solid #333333;
+}
+/*world*/
+div.world{
+    width: 900px;
+    height: 700px;
+    text-align: unset;
+    border:1px black solid;
+}
+div.world div.board-container{
+    background-image: url("../images/blackboard8.png");
+    width: 250px;
+    height: 250px;
+    background-size: 250px 250px;
+}
+/*side-menu*/
+div.side-menu{
+    float: right;
+    width: 200px;
+    height: 700px;
+    background-image: url("../images/bw_checkerboard.png");
+    background-size: contain;
+   }
+div.side-menu .tool{
+    margin:61px 25px 10px 25px;
+    width: 127px;
+    height: 150px;
+    border: 2px ghostwhite solid;
+    border-radius: 100px;
+    background-color: white;
+}
+div.side-menu div.spatula{
+        margin-top: 10px
+}
+div.tool .spatula-img{
+    width: 138px;
+}
+div.tool .tongs-img{
+    width: 182px;
+    margin-left: -26px;
+    margin-top: -16px;
+    transform: rotate(30deg);
+}
+div.tool .spoon-img{
+    width: 154px;
+    margin-left: -12px;
+    transform: rotate(-75deg);
+}
+/*ingredients*/
+div.ingredients{
+    padding-right: 218px;
+}
+div.ingredients div{
+    background-image: url("../images/tray-1.jpg");
+    height: 108px;
+    width: 304px;
+    background-size: contain;
+    display: inline-block;
+}
+
+div.side-menu div:not{
+
+}
