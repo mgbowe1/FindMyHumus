@@ -5,15 +5,25 @@
 
         <style type="text/css">
             /* Set a size for our map container, the Google Map will take up 100% of this container */
-            #map, .perspective {
+            #map {
                 width: 750px;
                 height: 500px;
-                -ms-transform: rotateX(20deg);
-                -webkit-transform: rotateX(20deg);
-                transform: rotateX(20deg);
+                -webkit-perspective: 150px;
+                perspective: 150px;
+                -webkit-perspective-origin: bottom;
+                perspective-origin: bottom;
+                transform-style: preserve-3d;
+                -ms-transform:  rotate3d(1, 0, 0, 20deg);
+                transform: rotate3d(1, 0, 0, 20deg);
             }
             .perspective {
+              width: 750px;
+              height:500px;
+              -webkit-perspective: 150px;
               perspective: 150px;
+              -webkit-perspective-origin: bottom;
+              perspective-origin: bottom;
+              transform-style:preserve-3d;
             }
         </style>
         <link rel="stylesheet" href="css/map-rotate.css" />
