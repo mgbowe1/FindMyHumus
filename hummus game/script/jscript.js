@@ -49,11 +49,31 @@ $(document).ready(function () {
             $('.'+askedIngredient+'-tray').css('background-image','url("./images/tray-'+askedIngredient+'-'+ingredientsCounter[askedIngredient]+'.png")');
         }
         else if(ingredientsCounter[askedIngredient]>=3){
-            $('.'+askedIngredient+'-tray').css('background-image','url("./images/tray-1.png")')
-
+            $('.'+askedIngredient+'-tray').css('background-image','url("./images/tray-1.png")');
+            // $('.'+askedIngredient+'-tray').addClass('empty-tray');
         }
+        
+
     });
 
-    
+
+//Li: refill tray function
+
+    // var emptyTray = $('.empty-tray');
+    var refill = $('.refill');
+    var hummusTray = $('.hummus-tray');
+    var fulTray = $('.ful-tray');
+    var eggTray =$('.egg-tray');
+    refill.click (function () {
+        ingredientsCounter={parsley:1, hummus:1, ful:1, egg:1};
+        // emptyTray.css('background-image', 'url("./images/tray-'+emptyTray.attr('data-in-tray')+'-1.png")');
+        hummusTray.css('background-image', 'url("./images/tray-hummus-1.png")');
+        fulTray.css('background-image', 'url("./images/tray-ful-1.png")');
+        eggTray.css('background-image', 'url("./images/tray-egg-1.png")');
+
+    });
+
+
 //till here
 });
+

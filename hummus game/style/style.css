@@ -12,6 +12,15 @@ div.inline{
 /*div:not(.show){*/
     /*display:none;*/
 /*}*/
+
+div.title{
+    position:relative;
+    display:inline-block;
+    height:150px;
+    width: 1000px;
+    background-image: url("../images/hummus-ninja-icon.png");
+    background-repeat:no-repeat;
+}
 div.intro{
     position: absolute;
     width:100%;
@@ -38,9 +47,11 @@ button.start-button{
 /*world*/
 div.world{
     width: 60%;
-    height: 99%;
+    height: 80%;
     text-align: unset;
     border:1px black solid;
+    background-image:url("../images/background-2.jpg");
+    background-size:contain;
 }
 div.world div.board-container{
     background-image: url("../images/blackboard8.png");
@@ -55,6 +66,25 @@ span.current-order{
     right:30px;
     font-family: "MV Boli", sans-serif;
 }
+/*refill button*/
+.refill {
+    background-image: url("../images/refill-2.png");
+    position: relative;
+    display: inline-block;
+    height: 60px;
+    width: 80px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    float: left;
+    margin-top: 40px;
+    margin-left: 40px;
+    border: 1px solid saddlebrown;
+    border-radius: 20px;
+    padding-top: 15px;
+    border-bottom-width: 7px;
+    background-color: #F5F5F5;
+}
+
 /*side-menu*/
 div.side-menu{
     float: right;
@@ -99,6 +129,7 @@ div.side-menu div.selected{
 /*ingredients*/
 div.ingredients{
     padding-right: 218px;
+    min-width: 1000px;
 }
 div.ingredients div{
     height: 108px;
