@@ -16,6 +16,7 @@ $(document).ready(function () {
             ' ful: '+ful);
          return orderObject;
     };
+<<<<<<< HEAD
     var orderIngredientsCounter=createFirstOrder();
     var createOrder = function (orderCounter) {
       var eggs = orderCounter.eggs + Math.floor((Math.random()*2) + 1);
@@ -45,6 +46,24 @@ $(document).ready(function () {
       setTimeout(dealing(origin, timeStepCounter + 1, timeStep), timeStep);  
       }
     };
+=======
+    createFirstOrder();
+    // var orderIngredientsCounter=createFirstOrder();
+    // var createOrder(orderCounter) {
+    //   var eggs = orderCounter.eggs + Math.floor((Math.random()*2) + 1);
+    //   var ful = orderCounter.ful + Math.floor((Math.random()*3) + 1);
+    //   var hummus = orderCounter.hummus + Math.floor((Math.random()*2) + 1);
+    //   var orderObj = {eggs:eggs, hummus:hummus, ful:ful};
+    //   $('span.current-order').text('eggs: '+eggs+
+    //       ' hummus scoops: '+hummus+
+    //       ' ful: '+ful);
+    //    return orderObj;
+    // }
+    // dealing with the order
+    // var dealing=function (orderIngredientsCounter) {
+    //
+    // };
+>>>>>>> refs/remotes/origin/Lior
 
     var ingredientsCounter={parsley:1, hummus:1, ful:1, egg:1};
 //gives the serving utensils data about what they can scoop
@@ -74,10 +93,24 @@ $(document).ready(function () {
         }
         else if(ingredientsCounter[askedIngredient]>=3){
             $('.'+askedIngredient+'-tray').css('background-image','url("./images/tray-1.png")')
-
         }
+<<<<<<< HEAD
+=======
+        else if(askedIngredient!==selectedUtensil.attr('data-can-scoop')){
+            selectedUtensil.addClass('wrong-tool');
+            setTimeout(function () {
+                selectedUtensil.removeClass('wrong-tool');
+            },200);
+        }
+>>>>>>> refs/remotes/origin/Lior
     });
-
+    var failed= function () {
+        $('div.world').addClass('hide');
+        $('div.intro').addClass('hide');
+        $('div.side-menu').addClass('hide');
+        $('div.ingredients').addClass('hide');
+        $('body').addClass('failed');
+    };
 
 //till here
 });

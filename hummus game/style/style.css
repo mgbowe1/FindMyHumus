@@ -126,4 +126,10 @@ div.ingredients div{
 div.side-menu div.wrong-tool{
     background-color: red;
 }
-
+div.hide{
+    display: none;
+}
+body.failed{
+    background-image: url("../images/blood-screen.png");
+    background-size: cover;
+}
