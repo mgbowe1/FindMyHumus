@@ -1,0 +1,119 @@
+body{
+    position: absolute;
+    width:100%;
+    top:0;
+    bottom:0;
+    text-align: center;
+    margin:0;
+}
+div.inline{
+    display: inline-block;
+}
+/*div:not(.show){*/
+    /*display:none;*/
+/*}*/
+div.intro{
+    position: absolute;
+    width:100%;
+    top:0;
+    bottom:0;
+    text-align: center;
+    background-image: url("../images/background1.jpg");
+    background-size: cover;
+}
+div.image-holder{
+    padding-top: 200px;
+    margin-bottom: 40px;
+    display: block;
+}
+button.start-button{
+    border-radius: 20px;
+    color: white;
+    background-color: #333333;
+    width: 263px;
+    height: 63px;
+    font-size: 45px;
+    border: 1px solid #333333;
+}
+/*world*/
+div.world{
+    width: 60%;
+    height: 99%;
+    text-align: unset;
+    border:1px black solid;
+}
+div.world div.board-container{
+    background-image: url("../images/blackboard8.png");
+    width: 250px;
+    height: 250px;
+    background-size: 250px 250px;
+}
+span.current-order{
+    color: white;
+    position: relative;
+    top: 30px;
+    right:30px;
+    font-family: "MV Boli", sans-serif;
+}
+/*side-menu*/
+div.side-menu{
+    float: right;
+    width: 13%;
+    height: 99%;
+    background-image: url("../images/bw_checkerboard.png");
+    background-size: contain;
+}
+div.side-menu .utensil{
+    margin-top: 50px;
+    display: inline-block;
+    width: 127px;
+    height: 150px;
+    border: 2px ghostwhite solid;
+    border-radius: 100px;
+    background-color: white;
+    text-align: center;
+}
+div.side-menu div.spatula{
+    margin-top: 10px;
+    background-image: url("../images/hummus-spatula.ico");
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+div.side-menu .tongs{
+    background-image: url("../images/tongs-rotated.png");
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+div.side-menu .spoon{
+    background-image: url("../images/spoon-2.png");
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+
+}
+div.side-menu div.selected{
+    background-color:deepskyblue;
+}
+/*ingredients*/
+div.ingredients{
+    padding-right: 218px;
+}
+div.ingredients div{
+    height: 108px;
+    width: 250px;
+    background-size: contain;
+    display: inline-block;
+    background-repeat: no-repeat;
+}
+.ful-tray{
+    background-image: url("../images/tray-ful-1.png");
+}
+.hummus-tray{
+    background-image: url("../images/tray-hummus-1.png");
+}
+.egg-tray{
+     background-image: url("../images/tray-egg-1.png");
+ }
+
