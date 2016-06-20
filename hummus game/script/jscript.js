@@ -21,62 +21,7 @@ $(document).ready(function () {
         utensils.removeClass('selected');
         selectedUtensil.addClass('selected');
     });
-    //handle the case of failure
-    var failed= function () {
-        $('div.world').addClass('hide');
-        $('div.intro').addClass('hide');
-        $('div.side-menu').addClass('hide');
-        $('div.ingredients').addClass('hide');
-        $('body').addClass('failed');
-    };
-    //creates an order
-    var createFirstOrder=function () {
-        var eggs=Math.floor((Math.random()*4)+1);
-        var ful=Math.floor((Math.random()*4)+1);
-        var hummus=Math.floor((Math.random()*4)+1);
-        var orderObject={eggs:eggs, hummus:hummus, ful:ful};
-        $('p.first-line').text('eggs: '+eggs);
-        $('p.second-line').text('ful: '+ful);
-        $('p.third-line').text('hummus: '+hummus);
-         return orderObject;
-    };
-
-    var orderIngredientsCounter=createFirstOrder();
-    var createOrder = function (orderCounter) {
-      var eggs = orderCounter.eggs + Math.floor((Math.random()*2) + 1);
-      var ful = orderCounter.ful + Math.floor((Math.random()*3) + 1);
-      var hummus = orderCounter.hummus + Math.floor((Math.random()*2) + 1);
-      var orderObj = {eggs:eggs, hummus:hummus, ful:ful};
-        $('p.first-line').text('eggs: '+eggs);
-        $('p.second-line').text('ful: '+ful);
-        $('p.third-line').text('hummus: '+hummus);
-       return orderObj;
-    };
-    var onThePlate = {hummus:0, ful:0, eggs:0, parsely:0};
-
-    //dealing with the order
-    var dealing=function (orderIngredientsCounter, timeStepCounter, timeStep) {
-        var origin = orderIngredientsCounter;
-        //handle the case of sucssess
-        if(origin.eggs <= onThePlate.egg &&
-            origin.ful <= onThePlate.ful &&
-            origin.hummus <= onThePlate.hummus) {
-            setTimeout(dealing(createOrder(origin), 0, timeStep - 1000), 1000);
-        }
-        //times up
-        if(timeStepCounter >= 3) {
-            failed();
-        }
-        else {
-            setTimeout(dealing(origin, timeStepCounter + 1, timeStep), timeStep);
-        }
-    };
-
-    createFirstOrder();
-    dealing();
-
-   
-//when trying to scoop
+    //when trying to scoop
     var ingredients=$('div.ingredients div');
     ingredients.on('click', function () {
         var askedIngredient=$(this).attr('data-in-tray');
@@ -89,7 +34,6 @@ $(document).ready(function () {
             $('.'+askedIngredient+'-tray').css('background-image','url("./images/tray-1.png")')
         }
 
-
         else if(askedIngredient!==selectedUtensil.attr('data-can-scoop')){
             selectedUtensil.addClass('wrong-tool');
             setTimeout(function () {
@@ -98,6 +42,60 @@ $(document).ready(function () {
         }
 
     });
+
+    var failed= function () {
+        $('div.world').addClass('hide');
+        $('div.intro').addClass('hide');
+        $('div.side-menu').addClass('hide');
+        $('div.ingredients').addClass('hide');
+        $('body').addClass('failed');
+    };
+    //creates an order
+    var createFirstOrder=function () {
+        var egg=Math.floor((Math.random()*4)+1);
+        var ful=Math.floor((Math.random()*4)+1);
+        var hummus=Math.floor((Math.random()*4)+1);
+        var orderObject={egg:egg, hummus:hummus, ful:ful};
+        $('.first-line').text('egg: '+egg);
+        $('.second-line').text('Hummus: '+hummus);
+        $('.third-line').text('Ful: '+ful);
+        return orderObject;
+    };
+
+    var orderIngredientsCounter=createFirstOrder();
+    var createOrder = function (orderCounter) {
+      var egg = orderCounter.egg + Math.floor((Math.random()*2) + 1);
+      var ful = orderCounter.ful + Math.floor((Math.random()*3) + 1);
+      var hummus = orderCounter.hummus + Math.floor((Math.random()*2) + 1);
+      var orderObj = {egg:egg, hummus:hummus, ful:ful};
+        $('.first-line').text('egg: '+egg);
+        $('.second-line').text('Hummus: '+hummus);
+        $('.third-line').text('Ful: '+ful);
+        return orderObj;
+    }
+    var onThePlate = {hummus:0, ful:0, egg:0, parsely:0};
+    //dealing with the order
+    var dealing=function (orderIngredientsCounter, timeStepCounter, timeStep) {
+      var origin = orderIngredientsCounter;
+
+      if(origin.egg <= onThePlate.egg &&
+         origin.ful <= onThePlate.ful &&
+         origin.hummus <= onThePlate.hummus) {
+           setTimeout(function() {dealing(createOrder(origin), 0, timeStep - 1000);}, 1000);
+         }
+      if(timeStepCounter >= 3) {
+        failed();
+      }
+      else {
+        $("#client").css("background-image", "url('../images/ninja-character-"+ (timeStepCounter+1) + ".png')");
+        setTimeout(function(){dealing(origin, timeStepCounter + 1, timeStep);}, timeStep);
+      }
+    }
+
+    dealing(orderIngredientsCounter, 0, 12000);
+
+
+
 
 
 //till here
