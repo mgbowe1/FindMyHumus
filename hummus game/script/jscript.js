@@ -18,21 +18,21 @@ $(document).ready(function () {
          return orderObject;
     };
     createFirstOrder();
-    var orderIngredientsCounter=createFirstOrder();
-    var createOrder(orderCounter) {
-      var eggs = orderCounter.eggs + Math.floor((Math.random()*2) + 1);
-      var ful = orderCounter.ful + Math.floor((Math.random()*3) + 1);
-      var hummus = orderCounter.hummus + Math.floor((Math.random()*2) + 1);
-      var orderObj = {eggs:eggs, hummus:hummus, ful:ful};
-      $('span.current-order').text('eggs: '+eggs+
-          ' hummus scoops: '+hummus+
-          ' ful: '+ful);
-       return orderObj;
-    }
-    dealing with the order
-    var dealing=function (orderIngredientsCounter) {
-
-    };
+    // var orderIngredientsCounter=createFirstOrder();
+    // var createOrder(orderCounter) {
+    //   var eggs = orderCounter.eggs + Math.floor((Math.random()*2) + 1);
+    //   var ful = orderCounter.ful + Math.floor((Math.random()*3) + 1);
+    //   var hummus = orderCounter.hummus + Math.floor((Math.random()*2) + 1);
+    //   var orderObj = {eggs:eggs, hummus:hummus, ful:ful};
+    //   $('span.current-order').text('eggs: '+eggs+
+    //       ' hummus scoops: '+hummus+
+    //       ' ful: '+ful);
+    //    return orderObj;
+    // }
+    // dealing with the order
+    // var dealing=function (orderIngredientsCounter) {
+    //
+    // };
 
     var ingredientsCounter={parsley:1, hummus:1, ful:1, egg:1};
 //gives the serving utensils data about what they can scoop
@@ -63,7 +63,6 @@ $(document).ready(function () {
         }
         else if(ingredientsCounter[askedIngredient]>=3){
             $('.'+askedIngredient+'-tray').css('background-image','url("./images/tray-1.png")')
-
         }
         else if(askedIngredient!==selectedUtensil.attr('data-can-scoop')){
             selectedUtensil.addClass('wrong-tool');
@@ -71,9 +70,14 @@ $(document).ready(function () {
                 selectedUtensil.removeClass('wrong-tool');
             },200);
         }
-        
     });
-
+    var failed= function () {
+        $('div.world').addClass('hide');
+        $('div.intro').addClass('hide');
+        $('div.side-menu').addClass('hide');
+        $('div.ingredients').addClass('hide');
+        $('body').addClass('failed');
+    };
 
 //till here
 });
