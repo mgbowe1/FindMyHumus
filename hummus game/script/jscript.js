@@ -11,12 +11,42 @@ $(document).ready(function () {
         var ful=Math.floor((Math.random()*4)+1);
         var hummus=Math.floor((Math.random()*4)+1);
         var orderObject={eggs:eggs, hummus:hummus, ful:ful};
-        $('.first-line').text('Eggs: '+eggs);
-        $('.second-line').text('Hummus: '+hummus);
-        $('.third-line').text('Ful: '+ful);
-
+        $('span.current-order').text('eggs: '+eggs+
+            ' hummus scoops: '+hummus+
+            ' ful: '+ful);
          return orderObject;
     };
+<<<<<<< HEAD
+    var orderIngredientsCounter=createFirstOrder();
+    var createOrder = function (orderCounter) {
+      var eggs = orderCounter.eggs + Math.floor((Math.random()*2) + 1);
+      var ful = orderCounter.ful + Math.floor((Math.random()*3) + 1);
+      var hummus = orderCounter.hummus + Math.floor((Math.random()*2) + 1);
+      var orderObj = {eggs:eggs, hummus:hummus, ful:ful};
+      $('span.current-order').text('eggs: '+eggs+
+          ' hummus scoops: '+hummus+
+          ' ful: '+ful);
+       return orderObj;
+    }
+    var onThePlate = {hummus:0, ful:0, eggs:0, parsely:0};
+    //dealing with the order
+    var dealing=function (orderIngredientsCounter, timeStepCounter, timeStep) {
+      var origin = orderIngredientsCounter;
+
+      if(origin.eggs <= onThePlate.egg &&
+         origin.ful <= onThePlate.ful &&
+         origin.hummus <= onThePlate.hummus) {
+           setTimeout(dealing(createOrder(origin), 0, timeStep - 1000), 1000);
+         }
+      if(timeStepCounter >= 3) {
+        // trigger game over
+        return;
+      }
+      else {
+      setTimeout(dealing(origin, timeStepCounter + 1, timeStep), timeStep);  
+      }
+    };
+=======
     createFirstOrder();
     // var orderIngredientsCounter=createFirstOrder();
     // var createOrder(orderCounter) {
@@ -33,6 +63,7 @@ $(document).ready(function () {
     // var dealing=function (orderIngredientsCounter) {
     //
     // };
+>>>>>>> refs/remotes/origin/Lior
 
     var ingredientsCounter={parsley:1, hummus:1, ful:1, egg:1};
 //gives the serving utensils data about what they can scoop
@@ -55,21 +86,23 @@ $(document).ready(function () {
     var ingredients=$('div.ingredients div');
     ingredients.on('click', function () {
         var askedIngredient=$(this).attr('data-in-tray');
-        var selectedUtensil=$('.selected');
 
-        if (askedIngredient===selectedUtensil.attr('data-can-scoop') && ingredientsCounter[askedIngredient]<3){
+        if (askedIngredient===$('.selected').attr('data-can-scoop') && ingredientsCounter[askedIngredient]<3){
             ingredientsCounter[askedIngredient]++;
             $('.'+askedIngredient+'-tray').css('background-image','url("./images/tray-'+askedIngredient+'-'+ingredientsCounter[askedIngredient]+'.png")');
         }
         else if(ingredientsCounter[askedIngredient]>=3){
             $('.'+askedIngredient+'-tray').css('background-image','url("./images/tray-1.png")')
         }
+<<<<<<< HEAD
+=======
         else if(askedIngredient!==selectedUtensil.attr('data-can-scoop')){
             selectedUtensil.addClass('wrong-tool');
             setTimeout(function () {
                 selectedUtensil.removeClass('wrong-tool');
             },200);
         }
+>>>>>>> refs/remotes/origin/Lior
     });
     var failed= function () {
         $('div.world').addClass('hide');
