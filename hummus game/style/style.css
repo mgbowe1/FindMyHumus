@@ -41,6 +41,7 @@ div.world{
     height: 80%;
     text-align: unset;
     border:1px black solid;
+    /*background-image: ;*/
 }
 div.world div.board-container{
     background-image: url("../images/blackboard8.png");
@@ -61,6 +62,13 @@ div.order-container p{
     display: block;
     text-align: left;
     font-size: 27px;
+}
+#client{
+    background-image: url("../images/ninja-character-1.png");
+    background-size: cover;
+    float: right;
+    height:200px;
+    width: 200px;
 }
 /*side-menu*/
 div.side-menu{
