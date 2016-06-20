@@ -38,22 +38,29 @@ button.start-button{
 /*world*/
 div.world{
     width: 60%;
-    height: 99%;
+    height: 80%;
     text-align: unset;
     border:1px black solid;
 }
 div.world div.board-container{
     background-image: url("../images/blackboard8.png");
-    width: 250px;
-    height: 250px;
-    background-size: 250px 250px;
+    width: 25%;
+    height: 200px;
+    background-size: contain;
+    background-repeat: no-repeat;
 }
-span.current-order{
-    color: white;
+div.order-container{
     position: relative;
-    top: 30px;
-    right:30px;
+    top: 7%;
+    left: 12%;
+}
+div.order-container p{
+    color: white;
     font-family: "MV Boli", sans-serif;
+    margin: 0;
+    display: block;
+    text-align: left;
+    font-size: 27px;
 }
 /*side-menu*/
 div.side-menu{
@@ -116,4 +123,7 @@ div.ingredients div{
 .egg-tray{
      background-image: url("../images/tray-egg-1.png");
  }
+div.side-menu div.wrong-tool{
+    background-color: red;
+}
 

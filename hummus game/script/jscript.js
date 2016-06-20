@@ -11,22 +11,24 @@ $(document).ready(function () {
         var ful=Math.floor((Math.random()*4)+1);
         var hummus=Math.floor((Math.random()*4)+1);
         var orderObject={eggs:eggs, hummus:hummus, ful:ful};
-        $('span.current-order').text('eggs: '+eggs+
-            ' hummus scoops: '+hummus+
-            ' ful: '+ful);
+        $('.first-line').text('Eggs: '+eggs);
+        $('.second-line').text('Hummus: '+hummus);
+        $('.third-line').text('Ful: '+ful);
+
          return orderObject;
     };
-    var orderIngredientsCounter=createFirstOrder();
-    var createOrder(orderCounter) {
-      var eggs = orderCounter.eggs + Math.floor((Math.random()*2) + 1);
-      var ful = orderCounter.ful + Math.floor((Math.random()*3) + 1);
-      var hummus = orderCounter.hummus + Math.floor((Math.random()*2) + 1);
-      var orderObj = {eggs:eggs, hummus:hummus, ful:ful};
-      $('span.current-order').text('eggs: '+eggs+
-          ' hummus scoops: '+hummus+
-          ' ful: '+ful);
-       return orderObj;
-    }
+    createFirstOrder();
+    // var orderIngredientsCounter=createFirstOrder();
+    // var createOrder(orderCounter) {
+    //   var eggs = orderCounter.eggs + Math.floor((Math.random()*2) + 1);
+    //   var ful = orderCounter.ful + Math.floor((Math.random()*3) + 1);
+    //   var hummus = orderCounter.hummus + Math.floor((Math.random()*2) + 1);
+    //   var orderObj = {eggs:eggs, hummus:hummus, ful:ful};
+    //   $('span.current-order').text('eggs: '+eggs+
+    //       ' hummus scoops: '+hummus+
+    //       ' ful: '+ful);
+    //    return orderObj;
+    // }
     //dealing with the order
     var dealing=function (orderIngredientsCounter) {
 
@@ -53,8 +55,9 @@ $(document).ready(function () {
     var ingredients=$('div.ingredients div');
     ingredients.on('click', function () {
         var askedIngredient=$(this).attr('data-in-tray');
+        var selectedUtensil=$('.selected');
 
-        if (askedIngredient===$('.selected').attr('data-can-scoop') && ingredientsCounter[askedIngredient]<3){
+        if (askedIngredient===selectedUtensil.attr('data-can-scoop') && ingredientsCounter[askedIngredient]<3){
             ingredientsCounter[askedIngredient]++;
             $('.'+askedIngredient+'-tray').css('background-image','url("./images/tray-'+askedIngredient+'-'+ingredientsCounter[askedIngredient]+'.png")');
         }
@@ -62,6 +65,13 @@ $(document).ready(function () {
             $('.'+askedIngredient+'-tray').css('background-image','url("./images/tray-1.png")')
 
         }
+        else if(askedIngredient!==selectedUtensil.attr('data-can-scoop')){
+            selectedUtensil.addClass('wrong-tool');
+            setTimeout(function () {
+                selectedUtensil.removeClass('wrong-tool');
+            },200);
+        }
+        
     });
 
 
