@@ -66,8 +66,9 @@ div.order-container p{
 #client{
     background-image: url("../images/ninja-character-1.png");
     background-size: cover;
-    float: right;
-    height:200px;
+    position:relative;
+    left:290%;
+    height:300px;
     width: 200px;
 }
 /*side-menu*/
