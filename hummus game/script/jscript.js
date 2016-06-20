@@ -18,18 +18,18 @@ $(document).ready(function () {
          return orderObject;
     };
     createFirstOrder();
-    // var orderIngredientsCounter=createFirstOrder();
-    // var createOrder(orderCounter) {
-    //   var eggs = orderCounter.eggs + Math.floor((Math.random()*2) + 1);
-    //   var ful = orderCounter.ful + Math.floor((Math.random()*3) + 1);
-    //   var hummus = orderCounter.hummus + Math.floor((Math.random()*2) + 1);
-    //   var orderObj = {eggs:eggs, hummus:hummus, ful:ful};
-    //   $('span.current-order').text('eggs: '+eggs+
-    //       ' hummus scoops: '+hummus+
-    //       ' ful: '+ful);
-    //    return orderObj;
-    // }
-    //dealing with the order
+    var orderIngredientsCounter=createFirstOrder();
+    var createOrder(orderCounter) {
+      var eggs = orderCounter.eggs + Math.floor((Math.random()*2) + 1);
+      var ful = orderCounter.ful + Math.floor((Math.random()*3) + 1);
+      var hummus = orderCounter.hummus + Math.floor((Math.random()*2) + 1);
+      var orderObj = {eggs:eggs, hummus:hummus, ful:ful};
+      $('span.current-order').text('eggs: '+eggs+
+          ' hummus scoops: '+hummus+
+          ' ful: '+ful);
+       return orderObj;
+    }
+    dealing with the order
     var dealing=function (orderIngredientsCounter) {
 
     };
