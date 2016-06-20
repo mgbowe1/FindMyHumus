@@ -48,6 +48,13 @@ div.world div.board-container{
     height: 250px;
     background-size: 250px 250px;
 }
+span.current-order{
+    color: white;
+    position: relative;
+    top: 30px;
+    right:30px;
+    font-family: "MV Boli", sans-serif;
+}
 /*side-menu*/
 div.side-menu{
     float: right;
@@ -109,10 +116,4 @@ div.ingredients div{
 .egg-tray{
      background-image: url("../images/tray-egg-1.png");
  }
-span.current-order{
-    color: white;
-    position: relative;
-    top: 30px;
-    right:60px;
-    font-family: "MV Boli", sans-serif;
-}
+

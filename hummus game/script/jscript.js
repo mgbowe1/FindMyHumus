@@ -5,15 +5,23 @@ $(document).ready(function () {
 // });
 
 //from here
+    //creates an order
     var createOrder=function () {
         var eggs=Math.floor((Math.random()*4)+1);
         var ful=Math.floor((Math.random()*4)+1);
         var hummus=Math.floor((Math.random()*4)+1);
-        $('span.current-order').text('<pre>eggs: '+eggs+
+        var orderObject={eggs:eggs, hummus:hummus, ful:ful};
+        $('span.current-order').text('eggs: '+eggs+
             ' hummus scoops: '+hummus+
-            ' ful: '+ful+'</pre>');
+            ' ful: '+ful);
+         return orderObject;
     };
-    createOrder();
+    var orderIngredientsCounter=createOrder();
+    //dealing with the order
+    var dealing=function (orderIngredientsCounter) {
+          
+    };
+
     var ingredientsCounter={parsley:1, hummus:1, ful:1, egg:1};
 //gives the serving utensils data about what they can scoop 
     $(".spatula").attr('data-can-scoop', 'hummus');
@@ -41,7 +49,8 @@ $(document).ready(function () {
             $('.'+askedIngredient+'-tray').css('background-image','url("./images/tray-'+askedIngredient+'-'+ingredientsCounter[askedIngredient]+'.png")');
         }
         else if(ingredientsCounter[askedIngredient]>=3){
-            $('.'+askedIngredient+'-tray').css('background-image','url("./images/tray-1.jpg")')
+            $('.'+askedIngredient+'-tray').css('background-image','url("./images/tray-1.png")')
+
         }
     });
 
